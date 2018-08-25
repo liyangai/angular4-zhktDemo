@@ -1,0 +1,21 @@
+<li class="cf ov">
+  <i [class]="(dataBookList.getAllCheckd())?'cur fl check':'fl check'" (click)="checkAll()"></i>
+  <div class="fl btn-hover list-icon">
+    <a href="javascript:;" class="vm" (click)="dataBookList.delete()">
+      <i class="icon btn-fileup  vm"></i>批量删除</a>
+    <a href="javascript:;" class="vm">
+      <i class="icon btn-new  vm"></i>新建文件夹</a>
+    <a href="javascript:;" class="vm">
+      <i class="icon btn-share  vm"></i>批量移动</a>
+    <a href="javascript:;" class="vm">
+      <i class="icon btn-downing vm">
+        <em class="icon icon-downingb vm ab"></em>
+      </i>下载中</a>
+    <a href="javascript:;" class="vm">
+      <i class="icon btn-more  vm"></i>更多
+      <i class="icon btn-moresel  vm"></i>
+    </a>
+  </div>
+  <em class="fr tc">全部文件（{{dataBookList.bookList.length}}）</em>
+  <p>{{data}} | {{name2}}</p>
+</li>

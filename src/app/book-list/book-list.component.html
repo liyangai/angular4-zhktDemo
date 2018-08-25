@@ -1,0 +1,26 @@
+
+<li class="cf hover ov" *ngFor="let book of dataBookList.bookList" >
+  <i class='fl check'  ></i>
+  <!-- <i class='fl check' [class]="cur" ></i> -->
+  <div class="fl">
+      <div class="fl">
+          <!-- <i class=""></i> -->
+          <!-- <input [(ngModel)]="book.name" class="vm"  type="text"  > -->
+          <input [(ngModel)]="reNameModel" *ngIf="book.uuid === reNameId" [id]="'ngInput'+book.uuid" (keypress)="pressReName($event)" (blur)="submitRename(book)">
+          <p class="vm text_o" [class]="book.checkd?'cur':''" (click)="checkOne(book)">{{book.name}}</p>
+      </div>
+      <div class="fr list-icon">
+          <a title="分享" class="vm"><i class="icon btn-share  vm" (click)="reName(book)"></i></a>
+          <a class="vm"><i class="icon btn-downing vm" (click)="dataBookList.delete([book])"></i></a>
+          <a class="vm">
+              <i class="icon btn-more vm"></i>
+              <span class="more-cont ab">
+                  <em class="db">移动到</em>
+                  <em class="db">重命名</em>
+                  <em class="db">删除</em>
+              </span>
+          </a>
+      </div>
+  </div>
+  <em class="fr tc">{{getSyncText(book.syncstatus)}}</em><em class="fr tc">{{book.time}}</em>
+</li>
